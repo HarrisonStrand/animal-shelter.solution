@@ -7,6 +7,6 @@ namespace AnimalShelter.Models
     public string Name { get; set; }
     public string Breed {get; set; }
     public string Gender { get; set; }
-    public int DOA { get; set; }
+    public string DOA { get; set; }
   }
 }

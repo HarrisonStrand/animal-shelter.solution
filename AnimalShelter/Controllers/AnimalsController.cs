@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AnimalShelter.Controllers
 {
-  public class AnimalsController : Controllers
+  public class AnimalsController : Controller
   {
     private readonly AnimalShelterContext _db;
 
@@ -20,6 +20,37 @@ namespace AnimalShelter.Controllers
       return View(model);
     }
 
+    public ActionResult Dogs()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      return View(model);
+    }
+
+    public ActionResult Cats()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      return View(model);
+    }
+
+    public ActionResult Horses()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      return View(model);
+    }
+
+    public ActionResult Types()
+    {
+      List<Animal> model = _db.Animals.ToList();
+      return View(model);
+    }
+
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
     public ActionResult Create(Animal animal)
     {
       _db.Animals.Add(animal);
@@ -29,7 +60,7 @@ namespace AnimalShelter.Controllers
 
     public ActionResult Details(int id)
     {
-      Animal thisAnimal = _db.Animals.FirstOrDefault(animals => animals.AnimalId == id);
+      Animal thisAnimal = _db.Animals.FirstOrDefault(animals => animals.Id == id);
       return View(thisAnimal);
     }
   }

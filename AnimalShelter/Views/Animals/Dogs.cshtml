@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using AnimalShelter.Models;
+@model List<AnimalShelter.Models.Animal>;
+
+<h3>Dogs for Adoption:</h3>
+
+<ul>
+  @foreach (Animal animal in Model)
+  {
+    if (animal.Type == "dog")
+    {
+      <li>@Html.ActionLink($"{animal.Name}", "Details", new { id = animal.Id })</li>
+    }
+  }
+</ul>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
