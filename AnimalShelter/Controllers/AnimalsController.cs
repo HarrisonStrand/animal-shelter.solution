@@ -17,25 +17,30 @@ namespace AnimalShelter.Controllers
     public ActionResult Index()
     {
       List<Animal> model = _db.Animals.ToList();
-      return View(model);
+      List<Animal> listByName = model.OrderBy(animal => animal.Name).ToList();
+      return View(listByName);
     }
 
     public ActionResult Dogs()
     {
       List<Animal> model = _db.Animals.ToList();
-      return View(model);
+      // line 27 example of how to order a property in alphabetical order
+      List<Animal> listByName = model.OrderBy(animal => animal.Name).ToList();
+      return View(listByName);
     }
 
     public ActionResult Cats()
     {
       List<Animal> model = _db.Animals.ToList();
-      return View(model);
+      List<Animal> listByName = model.OrderBy(animal => animal.Name).ToList();
+      return View(listByName);
     }
 
     public ActionResult Horses()
     {
       List<Animal> model = _db.Animals.ToList();
-      return View(model);
+      List<Animal> listByName = model.OrderBy(animal => animal.Name).ToList();
+      return View(listByName);
     }
 
     public ActionResult Types()

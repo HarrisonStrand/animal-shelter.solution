@@ -9,4 +9,5 @@ namespace AnimalShelter.Models
     public string Gender { get; set; }
     public string DOA { get; set; }
   }
+
 }
